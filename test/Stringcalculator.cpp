@@ -2,8 +2,9 @@
 #include <vector>
 #include <numeric>
 #include <regex>
-
+#include <gtest/gtest.h>
 using namespace std;
+using namespace gtest;
 
 class StringCalculator {
 public:
@@ -62,4 +63,16 @@ int StringCalculator::Add(const string &input) {
 	check_for_negatives(numbers);
 
 	return accumulate(numbers.begin(), numbers.end(), 0);
+}
+
+TEST(String_Calc_When_passed_a_single_number, returns_0_for_empty_string)
+{
+  StringCalculator testobj;
+  string input="";
+  int expecting_value = 0;
+ //act
+  int actualvalue = testobj.Add(input);
+  // assert
+  ASSERT_EQ(actualvalue,expecting_value);	
+	
 }
