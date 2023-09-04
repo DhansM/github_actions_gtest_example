@@ -76,3 +76,28 @@ TEST(String_Calc_When_passed_a_single_number, returns_0_for_empty_string)
   ASSERT_EQ(actualvalue,expecting_value);	
 	
 }
+
+
+TEST(String_Calc_When_passed_a_single_number, returns_1_for_string_1)
+{
+  StringCalculator testobj;
+  string input="1";
+  int expecting_value = 1;
+ //act
+  int actualvalue = testobj.Add(input);
+  // assert
+  ASSERT_EQ(actualvalue,expecting_value);	
+	
+}
+
+TEST(String_Calc_When_passed_a_single_number, returns_sum_of_num_for_string_1_2)
+{
+  StringCalculator testobj;
+  string input="1","2";
+  int expecting_value = 3;
+ //act
+  int actualvalue = testobj.Add(input);
+  // assert
+  ASSERT_EQ(actualvalue,expecting_value);	
+	
+}
