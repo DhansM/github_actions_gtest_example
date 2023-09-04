@@ -70,7 +70,7 @@ class String_Calc:public Test{
 protected: 
 //Arrange
 StringCalculator testobj;
-}
+};
 
 TEST_F(String_Calc,When_passed_a_single_number_returns_0_for_empty_string)
 {
