@@ -65,7 +65,7 @@ int StringCalculator::Add(const string &input) {
 	return accumulate(numbers.begin(), numbers.end(), 0);
 }
 
-TEST(String_Calc_When_passed_a_single_number, returns_0_for_empty_string)
+TEST(String_Calc,When_passed_a_single_number_returns_0_for_empty_string)
 {
   StringCalculator testobj;
   string input="";
@@ -78,7 +78,7 @@ TEST(String_Calc_When_passed_a_single_number, returns_0_for_empty_string)
 }
 
 
-TEST(String_Calc_When_passed_a_single_number, returns_1_for_string_1)
+TEST(String_Calc,When_passed_a_single_number_returns_1_for_string_1)
 {
   StringCalculator testobj;
   string input="1";
@@ -90,7 +90,7 @@ TEST(String_Calc_When_passed_a_single_number, returns_1_for_string_1)
 	
 }
 
-TEST(String_Calc_When_passed_a_single_number, returns_sum_of_num_for_string_1_2)
+TEST(String_Calc,When_passed_a_single_number_returns_sum_of_num_for_string_1_2)
 {
   StringCalculator testobj;
   string input="1,2";
@@ -103,7 +103,7 @@ TEST(String_Calc_When_passed_a_single_number, returns_sum_of_num_for_string_1_2)
 }
 
 
-TEST(String_Calc_When_passed_a_multiple_numbers, returns_sum_of_num_for_string_1_2_3)
+TEST(String_Calc,When_passed_a_multiple_numbers_returns_sum_of_num_for_string_1_2_3)
 {
   StringCalculator testobj;
   string input="1,2,3";
