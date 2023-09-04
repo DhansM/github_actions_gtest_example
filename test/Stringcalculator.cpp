@@ -121,3 +121,20 @@ TEST_F(String_Calc,When_passed_a_multiple_numbers_returns_sum_of_num_for_string_
   ASSERT_EQ(actualvalue,expecting_value);	
 	
 }
+
+bool isEven(int number) {return number%2==0; }
+
+class Even_Test_Suite:public TestWithParam<int>{
+};
+
+TEST_P(Even_Test_Suite, Assert_For_Even_Numbers)
+{
+  int input = GetParam();
+  bool expected_result = true;
+  bool actual_result = isEven(input);
+  ASSERT_EQ(expected_result,actual_result);
+}
+
+INSTANTIATE_TEST_SUITE_P(IsEvenParamExample,
+	Even_Test_Suite,
+	Values(3,1,2,4,6,8));
