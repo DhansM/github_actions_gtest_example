@@ -1,6 +1,6 @@
 add_executable(${PROJECT_NAME}.test
   AllTests.cpp
-  #fixtureExampleTest.cpp
+  #fixtureExampleTest.cpp 
   #valueParameterizationTest.cpp
   #typeParameterizationExample.cpp
   Stringcalculator.cpp
