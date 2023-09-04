@@ -65,9 +65,16 @@ int StringCalculator::Add(const string &input) {
 	return accumulate(numbers.begin(), numbers.end(), 0);
 }
 
-TEST(String_Calc,When_passed_a_single_number_returns_0_for_empty_string)
+//Fixture
+class String_Calc:public Test{
+protected: 
+//Arrange
+StringCalculator testobj;
+}
+
+TEST_F(String_Calc,When_passed_a_single_number_returns_0_for_empty_string)
 {
-  StringCalculator testobj;
+  //StringCalculator testobj;
   string input="";
   int expecting_value = 0;
  //act
@@ -78,9 +85,9 @@ TEST(String_Calc,When_passed_a_single_number_returns_0_for_empty_string)
 }
 
 
-TEST(String_Calc,When_passed_a_single_number_returns_1_for_string_1)
+TEST_F(String_Calc,When_passed_a_single_number_returns_1_for_string_1)
 {
-  StringCalculator testobj;
+  //StringCalculator testobj;
   string input="1";
   int expecting_value = 1;
  //act
@@ -90,9 +97,9 @@ TEST(String_Calc,When_passed_a_single_number_returns_1_for_string_1)
 	
 }
 
-TEST(String_Calc,When_passed_a_single_number_returns_sum_of_num_for_string_1_2)
+TEST_F(String_Calc,When_passed_a_single_number_returns_sum_of_num_for_string_1_2)
 {
-  StringCalculator testobj;
+  //StringCalculator testobj;
   string input="1,2";
   int expecting_value = 3;
  //act
@@ -103,9 +110,9 @@ TEST(String_Calc,When_passed_a_single_number_returns_sum_of_num_for_string_1_2)
 }
 
 
-TEST(String_Calc,When_passed_a_multiple_numbers_returns_sum_of_num_for_string_1_2_3)
+TEST_F(String_Calc,When_passed_a_multiple_numbers_returns_sum_of_num_for_string_1_2_3)
 {
-  StringCalculator testobj;
+  //StringCalculator testobj;
   string input="1,2,3";
   int expecting_value = 6;
  //act
