@@ -66,13 +66,31 @@ int StringCalculator::Add(const string &input) {
 }
 
 //Fixture
-class String_Calc:public Test{
+class String_Calc:public TestWithParam<std::tuple<string,int>>{
 protected: 
 //Arrange
 StringCalculator testobj;
 };
 
-TEST_F(String_Calc,When_passed_a_single_number_returns_0_for_empty_string)
+TEST_P(String_Calc,Assert_add_operation_all_testcases)
+{
+	const std::tuple<string,int> & parameter = GetParam();
+	string input = std::get<0>(parameter);
+	int expected_value = std::get<1>(parameter);
+        int actual_value = testobj.Add(input);
+	ASSERT_EQ(actual_value,expected_value);
+}
+
+INSTANTIATE_TEST_SUITE_P(String_Calc_Param_test,
+	String_Calc,
+	Values(
+	std::make_tuple("",0),
+	std::make_tuple("1",1),
+	std::make_tuple("1,2",3),
+	std::make_tuple("1,2,3",6)
+	));
+
+/*TEST_F(String_Calc,When_passed_a_single_number_returns_0_for_empty_string)
 {
   //StringCalculator testobj;
   string input="";
@@ -82,10 +100,10 @@ TEST_F(String_Calc,When_passed_a_single_number_returns_0_for_empty_string)
   // assert
   ASSERT_EQ(actualvalue,expecting_value);	
 	
-}
+}*/
 
 
-TEST_F(String_Calc,When_passed_a_single_number_returns_1_for_string_1)
+/*TEST_F(String_Calc,When_passed_a_single_number_returns_1_for_string_1)
 {
   //StringCalculator testobj;
   string input="1";
@@ -95,9 +113,9 @@ TEST_F(String_Calc,When_passed_a_single_number_returns_1_for_string_1)
   // assert
   ASSERT_EQ(actualvalue,expecting_value);	
 	
-}
+}*/
 
-TEST_F(String_Calc,When_passed_a_single_number_returns_sum_of_num_for_string_1_2)
+/*TEST_F(String_Calc,When_passed_a_single_number_returns_sum_of_num_for_string_1_2)
 {
   //StringCalculator testobj;
   string input="1,2";
@@ -107,10 +125,10 @@ TEST_F(String_Calc,When_passed_a_single_number_returns_sum_of_num_for_string_1_2
   // assert
   ASSERT_EQ(actualvalue,expecting_value);	
 	
-}
+}*/
 
 
-TEST_F(String_Calc,When_passed_a_multiple_numbers_returns_sum_of_num_for_string_1_2_3)
+/*TEST_F(String_Calc,When_passed_a_multiple_numbers_returns_sum_of_num_for_string_1_2_3)
 {
   //StringCalculator testobj;
   string input="1,2,3";
@@ -120,7 +138,7 @@ TEST_F(String_Calc,When_passed_a_multiple_numbers_returns_sum_of_num_for_string_
   // assert
   ASSERT_EQ(actualvalue,expecting_value);	
 	
-}
+}*/
 
 bool isEven(int number) {return number%2==0; }
 
