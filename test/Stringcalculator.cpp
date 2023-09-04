@@ -101,3 +101,16 @@ TEST(String_Calc_When_passed_a_single_number, returns_sum_of_num_for_string_1_2)
   ASSERT_EQ(actualvalue,expecting_value);	
 	
 }
+
+
+TEST(String_Calc_When_passed_a_multiple_numbers, returns_sum_of_num_for_string_1_2_3)
+{
+  StringCalculator testobj;
+  string input="1,2,3";
+  int expecting_value = 6;
+ //act
+  int actualvalue = testobj.Add(input);
+  // assert
+  ASSERT_EQ(actualvalue,expecting_value);	
+	
+}
