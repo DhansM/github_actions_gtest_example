@@ -4,7 +4,7 @@
 #include <regex>
 #include <gtest/gtest.h>
 using namespace std;
-using namespace gtest;
+using namespace testing;
 
 class StringCalculator {
 public:
